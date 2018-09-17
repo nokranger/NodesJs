@@ -1,5 +1,13 @@
 const express = require('express')
-const mongodb = require('mongodb')
+const mongoose = require('mongoose')
+
+mongoose.Promise = global.Promise;
+
+mongoose.connect('mongodb://localhost:27017/DB').then((doc) => {
+    console.log('Success to con')
+},(err) => {
+    console.log('Fail to con')
+})
 
 var app = express()
 
